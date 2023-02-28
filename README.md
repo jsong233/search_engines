@@ -284,6 +284,12 @@ and I obtained the following results.
 </picture>
 
 
+## Summary
+
+- PageRank uses Markov chain to model user behaviour, it represents the probability that a random surfer will end up on that page.
+- For a primitive stochastic matrix $A$, Perron's Theorem tells us that $\rho(A) =1$ is an algebraically simple eigenvalue of $A$, and all other eigenvalues have modulus strictly less than 1. Moreover, there exits a Perron vector $q > 0$, $\sum_i q_i = 1$ and $Aq = q$.
+- $\{A^k x_0\}$ will converge to the desired stationary distribution $q$.
+- The algorithm is more complicated in practice.
 
 
 
