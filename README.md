@@ -115,17 +115,31 @@ Given a collection of webpages $w_1,\cdots w_n$ and the links between them:
 
 ### Model
 
+Let $G$ be a directed graph in which the webpages $w_1,\cdots, w_n$ serve as vertices and the links as directed edges. Let $\tilde{G}$ be the graph obtained from $G$ by adding a vertex $w_0$ with edges to and from all other vertices. Let $O(i)$ be the number of outgoing edges from $w_i$ in $G$.
+
+    
+Let $A = (a_{ij})$ with $a_{ij}$ being the probability of entering page $i$ given the currrent page is $j$, and $\sum_i a_{ij} = 1$ for any $j$. Let $0\< d \<1$ be a damping parameter.
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./figures/A_clean.png" width="600">
   <img alt="Model between BYU webpages." src="./figures/A_clean.png">
 </picture>
 
 
-Let $G$ be a directed graph in which the webpages $w_1,\cdots, w_n$ serve as vertices and the links as directed edges. Let $\tilde{G}$ be the graph obtained from $G$ by adding a vertex $w_0$ with edges to and from all other vertices. Let $O(i)$ be the number of outgoing edges from $w_i$ in $G$.
+For maxtrix $A$, we have the following settings.
 
-    
-Let $A = (a_{ij})$ with $a_{ij}$ being the probability of entering page $i$ given the currrent page is $j$, and $\sum_i a_{ij} = 1$ for any $j$. Let $0<d<1$ be a damping parameter.
+$$a_{ii} = 0, 0\leqslant i\leqslant n; \quad a_{i0} = 1\/n, 0\<i\leqslant n;$$
 
+$$a_{0i} = \begin{cases}
+    1-d & O(i) \neq 0 \\
+    1 & O(i) = 0
+    \end{cases}, \quad
+    0 \< i \leqslant n;$$
+
+$$a_{ij} = \begin{cases}
+    d / O(j) & \text{if } j \text{ links to } i \\
+    0 & \text{if } j \text{ does not link to } i
+    \end{cases}, \quad i,j \> 0, i\neq j.$$
 
 
 <picture>
@@ -134,14 +148,5 @@ Let $A = (a_{ij})$ with $a_{ij}$ being the probability of entering page $i$ give
 </picture>
 
 
-$$a_{ii} = 0, 0\leqslant i\leqslant n; \quad a_{i0} = 1/n, 0<i\leqslant n;$$
-$$a_{0i} = \begin{cases}
-    1-d & O(i) \neq 0 \\
-    1 & O(i) = 0
-    \end{cases}, \quad
-    0 < i \leqslant n;$$
-    $$a_{ij} = \begin{cases}
-    d / O(j) & \text{if } j \text{ links to } i \\
-    0 & \text{if } j \text{ does not link to } i
-    \end{cases}, \quad i,j > 0, i\neq j.$$
+
 
