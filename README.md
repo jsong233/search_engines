@@ -58,7 +58,41 @@ Or the fraction of time the random user spends on that page in the
 long run.
 
 
+
 ### Example
+
+We consider the following webpages from BYU.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./images/byu.png" width="400">
+  <img alt="The physical formation of ghosting." src="./images/byu.png">
+</picture>
+
+
+
+```math
+    A = \begin{bmatrix}
+    0 & 1 & 1 & 1 & 1 \\
+    1 & 0 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0
+    \end{bmatrix}, 
+    \quad e = \begin{bmatrix}
+    1\\
+    1\\
+    1\\
+    1\\
+    1
+    \end{bmatrix},
+    \quad Ae = \begin{bmatrix}
+    4 \\
+    1 \\
+    3 \\
+    1 \\
+    0
+    \end{bmatrix}: \text{ number of incoming edges}
+```
 
 
 
