@@ -166,6 +166,76 @@ $$x^{(k+1)} = Ax^{(k)} \ (= A^{k+1} x^{(0)})$$
 
 
 
+## Analysis
+
+### Preliminary
+
+- **Spectral radius**: $\rho(A) = \max\{|\lambda_1|, \cdots, |\lambda_n|\}$
+        
+- **Primitive**: A nonnegative square matrix $A$ is primitive if $A^k > 0$ for some $k \in \mathbb{N}$.
+
+        
+- **Stochastic**: A nonnegative square matrix is (left) stochastic if the sum of the entries in each column is 1.
+
+
+### Perron's Theorem
+
+**Theorem (Perron).** Let $A$ be a primitive square matrix, then
+
+- $\rho(A) \> 0$,
+- $\rho(A)$ is an algebraically simple eigenvalue of $A$,
+- $|\lambda| \< \rho(A)$ for any eigenvalue $\lambda \neq \rho(A)$,
+- $\exists$ a unique positive vector $x$ that $Ax = \rho(A)x$ and $\sum_i x_i = 1$.
+
+
+**Corollary.** Let $A$ be a primitive stochastic matrix, then
+
+- $\rho(A) = 1$,
+- $\rho(A) = 1$ is an algebraically simple eigenvalue of $A$,
+- $|\lambda| \< 1$ for any eigenvalue $\lambda \neq 1$,
+- $\exists$ a unique positive vector $x$ that $Ax = x$ and $\sum_i x_i = 1$.
+
+
+### PageRank Model
+
+**Setup**: $A = (a_{ij})$, $0 \< d \< 1$.
+
+- **stochastic**: $\sum_i a_{ij} = 1$ for any $j$.
+- **primitive**: in the directed graph $\tilde{G}$, any page $w_i$ is reachable (with positive probability) from any page $w_j$ via the restart page $w_0$ after sufficiently many steps.
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/A.png" width="600">
+  <img alt="Model between BYU webpages." src="./figures/A.png">
+</picture>
+
+
+### Convergence
+
+- Let $q_1$ be the positive Perron vector that $Aq_1 = q_1$ and $\sum_i q_i = 1$.
+        
+- The generalized eigenspace $M(\lambda)$ of $A$ associated with $\lambda$ is composed of a collection of Jordan chains: 
+
+$$(A-\lambda I)^{m_1-1}v_1, (A-\lambda I)^{m_1-2}v_1, \cdots, (A-\lambda I)v_1, v_1;$$
+
+$$(A-\lambda I)^{m_2-1}v_2, (A-\lambda I)^{m_2-2}v_2, \cdots, (A-\lambda I)v_2, v_2; \cdots$$
+        
+- $\mathbb{R}^n = M(\lambda_1) \oplus \cdots \oplus M(\lambda_p) \Rightarrow$ The generalized eigenvectors of $A$ form a basis $\{q_1,q_2,\cdots, q_n\}$ of $\mathbb{R}^n.$
+
+
+- For the basis $\{q_1,q_2,\cdots, q_n\}$, we have $Aq_1 = q_1$ and
+
+$$Aq_t = \lambda_j q_t \text{ or } Aq_t = \lambda_j q_t + q_{t+1} \text{ for } t\neq 1, |\lambda_j|<1.$$
+       
+- Hence 
+
+$$\lim_{k\rightarrow\infty}A^kq_1 = q_1, \quad \lim_{k\rightarrow\infty} A^k q_t = 0, t\neq 1$$
+
+
+
+
+
+
 
 
 
