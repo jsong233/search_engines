@@ -250,13 +250,6 @@ $$A^kx^{(0)} = c_1A^kq_1 + c_2A^kq_2 + \cdots + c_nA^kq_n \rightarrow c_1 q_1.$$
 
 ## Implementation
 
-For the model
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./figures/byu.png" width="600">
-  <img alt="constructed model based on relations between BYU webpages" src="./figures/byu.png">
-</picture>
-
 
 I constructed the main matrix
 
@@ -270,6 +263,15 @@ A = \begin{bmatrix}
     1/5 & 0 & 0 & 0 & 0 & 0
     \end{bmatrix}
 ```
+
+
+for the model
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/byu.png" width="600">
+  <img alt="constructed model based on relations between BYU webpages" src="./figures/byu.png">
+</picture>
+
 
 and obtained the following results.
 
