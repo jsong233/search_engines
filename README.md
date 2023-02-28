@@ -128,7 +128,7 @@ Let $A = (a_{ij})$ with $a_{ij}$ being the probability of entering page $i$ give
 
 For maxtrix $A$, we have the following settings.
 
-$$a_{ii} = 0, 0\leqslant i\leqslant n; \quad a_{i0} = 1\/n, 0\<i\leqslant n;$$
+$$a_{ii} = 0, \ 0\leqslant i\leqslant n; \qquad a_{i0} = 1 / n, \ 0 \< i \leqslant n;$$
 
 $$a_{0i} = \begin{cases}
     1-d & O(i) \neq 0 \\
@@ -146,6 +146,25 @@ $$a_{ij} = \begin{cases}
   <source media="(prefers-color-scheme: dark)" srcset="./figures/A.png" width="600">
   <img alt="Model between BYU webpages." src="./figures/A.png">
 </picture>
+
+
+
+### Algorithm
+
+
+- **Claim**: $A$ is stochastic and primitive. By Perron's Theorem, $\rho(A) = 1$ is an algebraically simple eigenvalue of $A$ and there exists $q>0$ with $\sum_i q_i = 1$ such that $Aq = q$.
+
+
+- **Algorithm** (Power Iteration): 
+
+$$\text{Choose arbitrary }  x^{(0)} > 0 \text{ with } \sum_i x_i^{(0)} = 1$$
+
+$$x^{(k+1)} = Ax^{(k)} \ (= A^{k+1} x^{(0)})$$
+
+
+- **Remark**: $\{x^{(k)}\}$ will converge to the stationary distribution $q$. The algorithm will stop when the relative errors is smaller than some chosen tolerance. 
+
+
 
 
 
