@@ -212,6 +212,8 @@ $$x^{(k+1)} = Ax^{(k)} \ (= A^{k+1} x^{(0)})$$
 
 ### Convergence
 
+**Step 1**:
+
 - Let $q_1$ be the positive Perron vector that $Aq_1 = q_1$ and $\sum_i q_i = 1$.
         
 - The generalized eigenspace $M(\lambda)$ of $A$ associated with $\lambda$ is composed of a collection of Jordan chains: 
@@ -223,6 +225,8 @@ $$(A-\lambda I)^{m_2-1}v_2, (A-\lambda I)^{m_2-2}v_2, \cdots, (A-\lambda I)v_2, 
 - $\mathbb{R}^n = M(\lambda_1) \oplus \cdots \oplus M(\lambda_p) \Rightarrow$ The generalized eigenvectors of $A$ form a basis $\{q_1,q_2,\cdots, q_n\}$ of $\mathbb{R}^n.$
 
 
+**Step 2**:
+
 - For the basis $\{q_1,q_2,\cdots, q_n\}$, we have $Aq_1 = q_1$ and
 
 $$Aq_t = \lambda_j q_t \text{ or } Aq_t = \lambda_j q_t + q_{t+1} \text{ for } t\neq 1, |\lambda_j|<1.$$
@@ -230,6 +234,55 @@ $$Aq_t = \lambda_j q_t \text{ or } Aq_t = \lambda_j q_t + q_{t+1} \text{ for } t
 - Hence 
 
 $$\lim_{k\rightarrow\infty}A^kq_1 = q_1, \quad \lim_{k\rightarrow\infty} A^k q_t = 0, t\neq 1$$
+
+
+**Step 3**:
+
+- For any $x^{(0)} > 0$ with $\sum_i x_i^{(0)} = 1$, let $x^{(0)} = c_1q_1 + c_2q_2 + \cdots + c_nq_n$ ($c_1 \neq 0$ with probability 1).
+
+- Since $\lim_{k\rightarrow\infty}A^kq_1 = q_1$ and $\lim_{k\rightarrow\infty} A^k q_t = 0, t\neq 1$, we have 
+
+$$A^kx^{(0)} = c_1A^kq_1 + c_2A^kq_2 + \cdots + c_nA^kq_n \rightarrow c_1 q_1.$$
+
+- Normalize $c_1q_1$ to obtain the Perron vector $q_1$. 
+
+
+
+## Implementation
+
+I constructed the main matrix
+
+```math
+A = \begin{bmatrix}
+    0 & 1-d & 1-d & 1-d & 1-d & 1-d \\ 
+    1/5 & 0 & d & d/2 & d/2 & d/2 \\
+    1/5 & d/2 & 0 & 0 & 0 & 0 \\
+    1/5 & d/2 & 0 & 0 & d/2 & d/2 \\
+    1/5 & 0 & 0 & d/2 & 0 & 0 \\
+    1/5 & 0 & 0 & 0 & 0 & 0
+    \end{bmatrix}
+```
+
+for the model
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/byu.png" width="600">
+  <img alt="constructed model based on relations between BYU webpages" src="./figures/byu.png">
+</picture>
+
+and I obtained the following results.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/imp.png" width="600">
+  <img alt="results from implementation of the PageRank algorithm to the BYU webpages model" src="./figures/imp.png">
+</picture>
+
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/imp2.png" width="600">
+  <img alt="results from implementation of the PageRank algorithm to the BYU webpages model" src="./figures/imp2.png">
+</picture>
+
 
 
 
