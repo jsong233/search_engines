@@ -127,3 +127,21 @@ Let $G$ be a directed graph in which the webpages $w_1,\cdots, w_n$ serve as ver
 Let $A = (a_{ij})$ with $a_{ij}$ being the probability of entering page $i$ given the currrent page is $j$, and $\sum_i a_{ij} = 1$ for any $j$. Let $0<d<1$ be a damping parameter.
 
 
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/A.png" width="600">
+  <img alt="Model between BYU webpages." src="./figures/A.png">
+</picture>
+
+
+$$a_{ii} = 0, 0\leqslant i\leqslant n; \quad a_{i0} = 1/n, 0<i\leqslant n;$$
+$$a_{0i} = \begin{cases}
+    1-d & O(i) \neq 0 \\
+    1 & O(i) = 0
+    \end{cases}, \quad
+    0 < i \leqslant n;$$
+    $$a_{ij} = \begin{cases}
+    d / O(j) & \text{if } j \text{ links to } i \\
+    0 & \text{if } j \text{ does not link to } i
+    \end{cases}, \quad i,j > 0, i\neq j.$$
+
