@@ -1,6 +1,6 @@
 # Dynamics in Search Engines
 
-Investigation of Google's PageRank Algorithm.
+*PageRank* is essential for search engines to produce a list of webpages in the order of importance. I Interpreted the user behaviour between webpages as a Markov chain and investigate the applications of Perron-Frobenius Theorem in the Google PageRank algorithm.
 
 
 ## Search Engines
