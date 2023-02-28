@@ -99,7 +99,7 @@ And we constructed the following model accordingly.
     5 \\
     3 \\
     0
-    \end{bmatrix}: \text{counts "latent" edges}
+    \end{bmatrix}: \text{counts *latent* edges}
 ```
 
 
