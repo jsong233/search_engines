@@ -64,8 +64,8 @@ long run.
 We consider the following webpages from BYU.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./images/byu.png" width="400">
-  <img alt="The physical formation of ghosting." src="./images/byu.png">
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/byu.png" width="400">
+  <img alt="The physical formation of ghosting." src="./figures/byu.png">
 </picture>
 
 
