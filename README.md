@@ -64,11 +64,11 @@ long run.
 We consider the following webpages from BYU.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./figures/byu.png" width="400">
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/byu.png" width="600">
   <img alt="The physical formation of ghosting." src="./figures/byu.png">
 </picture>
 
-
+And we constructed the following model accordingly. 
 
 ```math
     A = \begin{bmatrix}
@@ -92,6 +92,14 @@ We consider the following webpages from BYU.
     1 \\
     0
     \end{bmatrix}: \text{ number of incoming edges}
+    \quad
+    A^2e = \begin{bmatrix}
+    5 \\
+    4 \\
+    5 \\
+    3 \\
+    0
+    \end{bmatrix}: \text{counts "latent" edges}
 ```
 
 
